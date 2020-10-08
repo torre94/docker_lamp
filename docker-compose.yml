@@ -14,7 +14,7 @@ services:
   mysql:
     image: mysql:latest
     networks:
-      - backend
+      - php
     environment:
       - MYSQL_ROOT_PASSWORD=mjythn
 networks:
