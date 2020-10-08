@@ -5,6 +5,9 @@ LABEL maintainer="Lorenzo Torregiani"
 # Prepare apt
 RUN apt-get update
 
+# Enable PHP to Mysql
+RUN docker-php-ext-install mysqli
+
 # Prepare fake SSL certificate
 RUN apt-get install -y ssl-cert
 
