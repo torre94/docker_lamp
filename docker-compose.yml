@@ -5,7 +5,7 @@ services:
       context: ./
       dockerfile: apache2.Dockerfile
     ports:
-      - 8080:80
+      - 8005:80
       - 9005:90
     networks:
       - php
