@@ -6,7 +6,7 @@ services:
       dockerfile: apache2.Dockerfile
     ports:
       - 8005:80
-      - 9005:445
+      - 9005:443
     networks:
       - php
     volumes:
