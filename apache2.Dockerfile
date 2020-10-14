@@ -22,7 +22,8 @@ RUN cp $PHP_INI_DIR/php.ini-production $PHP_INI_DIR/php.ini \
  && sed -i -e "s/^ *memory_limit.*/memory_limit = 512M/g" $PHP_INI_DIR/php.ini \
  && sed -i -e "s/^ *max_execution_time.*/max_execution_time = 120/g" $PHP_INI_DIR/php.ini \
  && sed -i -e "s/^ *post_max_size.*/post_max_size = 64M/g" $PHP_INI_DIR/php.ini \
- && sed -i -e "s/^ *upload_max_filesize.*/upload_max_filesize = 64M/g" $PHP_INI_DIR/php.ini
+ && sed -i -e "s/^ *upload_max_filesize.*/upload_max_filesize = 64M/g" $PHP_INI_DIR/php.ini \
+ && sed -i -e "s/^ *display_errors.*/display_errors  = on/g" $PHP_INI_DIR/php.ini
 
 # Work directory
 WORKDIR /var/www/html
