@@ -12,14 +12,19 @@ services:
     depends_on:
       - mysql
     volumes:
-      - ./html/:/var/www/html/
+      - ./src/:/var/www/html/
   mysql:
-    image: mysql:latest
+    build:
+      context: ./
+      dockerfile: mysql.Dockerfile
     networks:
       - default
     command: --default-authentication-plugin=mysql_native_password
     environment:
-      MYSQL_ROOT_PASSWORD: mjythn
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_USER: username
+      MYSQL_PASSWORD: password
+      MYSQL_DATABASE: mydb
     volumes:
       - ./db_data/:/var/lib/mysql/
   phpmyadmin:
@@ -34,3 +39,5 @@ services:
         - default
 networks:
   default:
+volumes:
+  data:
