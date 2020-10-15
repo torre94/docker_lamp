@@ -16,7 +16,7 @@ The stack starts 3 container by default:
 - MySQL
 - phpMyadmin
 
-**Why PHP and Apache in the same container**  
+**Why PHP and Apache in the same container?**  
 Best practices recommend using a container for each service. In this case I preferred to merge PHP and Apache in one container because most of the time you don't need mysql. This way you can run web applications in a single container.
 
 ### PHP version
